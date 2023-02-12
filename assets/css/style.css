@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+:root{
+    --cor-do-fundo:#CDF0EA;
+    --cor-do-texto:#F9F9F9;
+    --cor-pretinho:#0f0f0f;
+    --cor-destaque:#ECC5FB;
+    --cor-destaque2:#FAF4B7;
+
+    --fonte:font-family: 'Roboto Mono', monospace;
+}
+
+*{
+    font-family: var(--fonte);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--cor-do-fundo);
+}
+
+header {
+    height: 75px;
+    width: 100%;
+    background-color: var(--cor-pretinho);
+    color: var(--cor-do-texto);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.area-tabuada {
+    margin-top: 5px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+    background-color: var(--cor-destaque2);
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px;
+}
+
+input {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    margin: 10px;
+}
+
+footer {
+    height: 25px;
+    width: 100%;
+    background-color: var(--cor-pretinho);
+    color: var(--cor-do-texto);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-do-texto);
+}
+
+footer a {
+    color: var(--cor-do-texto);
+}
