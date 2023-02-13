@@ -40,14 +40,14 @@ verificaIgualdade();
 //função que pega o valor do input e compara com o resultado da multiplicação
 function verificaResposta() {
     multiplicacao.forEach((paragrafo, index) => {
-        const num1 = paragrafo.innerHTML.split('x')[0];
-        const num2 = paragrafo.innerHTML.split('=')[0].split('x')[1];
-        console.log(num1, num2);
+        const num1 = Number(paragrafo.innerHTML.split('x')[0]);
+        const num2 = Number(paragrafo.innerHTML.split('=')[0].split('x')[1]);
         const resultado = num1 * num2;
-        if (resultado == input[index].value) {
-            input[index].style.backgroundColor = 'green';
-        }else {
+        //confere se o input esta vazio
+        if (input[index].value === '' || resultado !== Number(input[index].value)) {
             input[index].style.backgroundColor = 'red';
+        }else if (resultado === Number(input[index].value)) {
+            input[index].style.backgroundColor = 'green';
         }
     })
 };
