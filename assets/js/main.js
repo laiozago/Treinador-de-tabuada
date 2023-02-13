@@ -99,6 +99,7 @@ reset.addEventListener('click', () => {
         input.value = '';
         input.style.backgroundColor = 'white';
     });
+    criaNumeros();
 });
 
 criaNumeros();
