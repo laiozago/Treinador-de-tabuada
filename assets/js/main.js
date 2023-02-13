@@ -3,17 +3,35 @@ const input = document.querySelectorAll('input');
 const buttons = document.querySelectorAll('button');
 const [confere, reset] = buttons;
 const multiplicacao = document.querySelectorAll('p');
- // tira p paragrafo do footer que não é necessário
 
 //função que cria dois numeros aleatŕios até 10 e coloca na tela no paragrafo
 function criaNumeros() {
+    const multiplicacoes = [];
+    const resultados = [];
     multiplicacao.forEach(paragrafo => {
-        const numero1 = Math.floor(Math.random() * 11);
-        const numero2 = Math.floor(Math.random() * 11);
-        paragrafo.innerHTML = `${numero1} x ${numero2} = `;
+        let repetir = true;
+        do {
+            const num1 = Math.floor(Math.random() * 11);
+            const num2 = Math.floor(Math.random() * 11);
+            const resultado = num1 * num2;
+            if (resultados.includes(resultado)) {
+                continue;
+            } else {
+                resultados.push(resultado);
+                multiplicacoes.push([num1, num2]);
+                if (resultados.length >= 10) {
+                    repetir = false;
+                }
+            }
+        } while (repetir);
     });
-    
+    multiplicacao.forEach((paragrafo, index) => {
+        paragrafo.innerHTML = `${multiplicacoes[index][0]} x ${multiplicacoes[index][1]} =`;
+    }
+    );
 }
+
+
 
 //não deixa o usuário digitar letras
 input.forEach(input => {
@@ -24,19 +42,6 @@ input.forEach(input => {
     })
 });
 
-//função para as mulplicações não ficarem com o mesmo resultado
-function verificaIgualdade() {
-    multiplicacao.forEach((paragrafo, index) => {
-        const num1 = paragrafo.innerHTML.split('x')[0];
-        const num2 = paragrafo.innerHTML.split('=')[0].split('x')[1];
-        const resultado = num1 * num2;
-        if (resultado == input[index].value) {
-            criaNumeros();
-            verificaIgualdade();
-        }
-    })
-}
-verificaIgualdade();
 //função que pega o valor do input e compara com o resultado da multiplicação
 function verificaResposta() {
     multiplicacao.forEach((paragrafo, index) => {
