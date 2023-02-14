@@ -8,6 +8,7 @@ const record = document.querySelector('#record');
 let pontuacao = 0;
 let pontuacaoMax = 0;
 
+
 //função para guardar a pontuação maxima no local storage
 function guardaPontuacao() {
     if (pontuacao > pontuacaoMax) {
@@ -60,7 +61,7 @@ function criaNumeros() {
             } else {
                 resultados.push(resultado);
                 multiplicacoes.push([num1, num2]);
-                if (resultados.length >= 10) {
+                if (resultados.length > 0) {
                     repetir = false;
                 }
             }
